@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Polydactyly
+  m_Controller: {fileID: 9100000, guid: 0789c207c9951d04c8ae529a5a03f6bf, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: bdedd01c0d0f4714b98ce628598aa9fa, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 95800f1a57b8cfc4a8857e81c024f101, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 6636d303c3f1e3d4595b4046ffa731bd, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 8940fb108e7389d4c822769a513c19a2, type: 2}

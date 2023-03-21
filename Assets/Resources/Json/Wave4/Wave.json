@@ -1,0 +1,24 @@
+{
+  "Wave": [
+    {
+      "enumys": ["Boss"],
+      "positions": [
+        {
+          "x": 13,
+          "y": 0.8,
+          "z": 0
+        }
+      ],
+      "playerPosFirst": {
+        "x": -6,
+        "y": 0.8,
+        "z": -7
+      },
+      "playerPosSec": {
+        "x": -6,
+        "y": 0.8,
+        "z": 7
+      }
+    }
+  ]
+}

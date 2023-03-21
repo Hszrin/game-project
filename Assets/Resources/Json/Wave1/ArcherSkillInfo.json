@@ -1,0 +1,22 @@
+﻿{
+  "skillInfo": [
+    {
+      "name": "다지증",
+      "skillText": "선천적으로 많은 손가락을 이용해 더 많은 화살을 발사하는 스타일 입니다.\n2개의 화살을 부채꼴 모양으로 더 발사합니다.",
+      "type": "typeComponent",
+      "componentName": "Polydactyly"
+    },
+    {
+      "name": "명사수",
+      "skillText": "강화된 시력으로 적들의 약점을 노리는 명사수 입니다.\n적들의 중심을 화살로 맞출시 크리티컬이 확정적으로 뜹니다.",
+      "type": "typeComponent",
+      "componentName": "Sniper"
+    },
+    {
+      "name": "자연의 힘",
+      "skillText": "자연의 힘을 이용해 다양한 원소의 힘이 담긴 화살을 발사합니다.\n3발마다 랜덤한 효과가 담긴 화살을 발사합니다.",
+      "type": "typeComponent",
+      "componentName": "ForceANature"
+    }
+  ]
+}

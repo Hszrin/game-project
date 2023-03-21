@@ -1,0 +1,65 @@
+{
+  "Wave": [
+    {
+      "enumys": [ "Enumy", "WeakEnumy", "Enumy" ],
+      "positions": [
+        {
+          "x": 10,
+          "y": 0.1,
+          "z": 6
+        },
+        {
+          "x": 10,
+          "y": 0.1,
+          "z": 0
+        },
+        {
+          "x": 10,
+          "y": 0.1,
+          "z": -6
+        }
+      ],
+      "playerPosFirst": {
+        "x": -6,
+        "y": 0.1,
+        "z": -7
+      },
+      "playerPosSec": {
+        "x": -6,
+        "y": 0.1,
+        "z": 7
+      }
+    },
+
+    {
+      "enumys": [ "Enumy", "WeakEnumy", "Enumy" ],
+      "positions": [
+        {
+          "x": 10,
+          "y": 0.1,
+          "z": 5
+        },
+        {
+          "x": 13,
+          "y": 0.1,
+          "z": 0
+        },
+        {
+          "x": 10,
+          "y": 0.1,
+          "z": -5
+        }
+      ],
+      "playerPosFirst": {
+        "x": -6,
+        "y": 0.1,
+        "z": -7
+      },
+      "playerPosSec": {
+        "x": -6,
+        "y": 0.1,
+        "z": 7
+      }
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "Wave": [
+    {
+      "enumys": [ "WeakEnumy", "WeakEnumy" ],
+      "positions": [
+        {
+          "x": 10,
+          "y": 0.1,
+          "z": 6
+        },
+        {
+          "x": 10,
+          "y": 0.1,
+          "z": -6
+        }
+      ],
+      "playerPosFirst": {
+        "x": -6,
+        "y": 0.1,
+        "z": -7
+      },
+      "playerPosSec": {
+        "x": -6,
+        "y": 0.1,
+        "z": 7
+      }
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+﻿{
+  "skillInfo": [
+    {
+      "name": "검과 방패",
+      "skillText": "방패를 이용하여 안정적인 전투를 구사합니다.\n공격을 3회 막아주는 방패를 캐릭터의 왼쪽에 소환합니다.",
+      "type": "typeComponent",
+      "componentName": "SwordAndBoard"
+    },
+    {
+      "name": "양손검",
+      "skillText": "거대한 검을 이용하여 강력한 전투를 구사합니다.\n무게 +20, 속도 -20, 검의 크기+, 육중함:검의 공격력이 캐릭터의 무게에 비례하여 증가합니다.",
+      "type": "typeComponent",
+      "componentName": "TwoHandedSword"
+    },
+    {
+      "name": "쌍검",
+      "skillText": "조금 가벼운 두개의 검을 양손에 들어 스타일리쉬한 전투를 구사합니다.\n검의 크기-, 반탄력:적을 직접공격한 뒤 빠져나오는 속도가 2배가 된다.",
+      "type": "typeComponent",
+      "componentName": "TwinSwords"
+    }
+  ]
+}

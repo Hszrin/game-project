@@ -1,0 +1,40 @@
+﻿{
+  "skillInfo": [
+    {
+      "name": "최대 체력 증가",
+      "skillText": "최대 체력이 20증가합니다.",
+      "type": "typeStat",
+      "amount": "20"
+    },
+    {
+      "name": "공격력 증가",
+      "skillText": "공격력이 20증가합니다.",
+      "type": "typeStat",
+      "amount": "20"
+    },
+    {
+      "name": "체력 회복",
+      "skillText": "체력을 40회복합니다.",
+      "type": "typeStat",
+      "amount": "40"
+    },
+    {
+      "name": "무게 증가",
+      "skillText": "무게가 10증가합니다.",
+      "type": "typeStat",
+      "amount": "10"
+    },
+    {
+      "name": "속도 증가",
+      "skillText": "속도가 5증가합니다.",
+      "type": "typeStat",
+      "amount": "5"
+    },
+    {
+      "name": "크리티컬 확률 증가",
+      "skillText": "크리티컬 확률이 5증가합니다.",
+      "type": "typeStat",
+      "amount": "5"
+    }
+  ]
+}
