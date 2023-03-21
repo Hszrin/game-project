@@ -27,7 +27,7 @@ public class StateEvent
     public UnityEvent onEnterCharging = new UnityEvent();
     public UnityEvent onChargingToIdle = new UnityEvent();
 }
-public class Player : MonoBehaviour, IAttacked, IChracterComponent, IStateEvent
+public class Player : MonoBehaviour, IAttacked, IChracterComponent, IStateEvent, IPlayerSpecialStatList
 {
     public Transform dragPoint;
     public Slider gage;
@@ -40,10 +40,11 @@ public class Player : MonoBehaviour, IAttacked, IChracterComponent, IStateEvent
     private GameObject hpPlusTextCopy;
     private GameObject damageTextPrefab;
     private GameObject damageTextCopy;
+    private SwordSwingScript swordSwingScript;
     public StateEvent stateEvent = new StateEvent();
     public TurnManager turn { get; protected set; }
 
-    public List<PlayerSpecialStat> playerSpecialStats = new List<PlayerSpecialStat>();
+    public PlayerSpecialStatList playerSpecialStats = new PlayerSpecialStatList();
     public CollisionComponent collisionComponent = new CollisionComponent();
 
     public ChracterComponent chracterComponent;
@@ -200,6 +201,10 @@ public class Player : MonoBehaviour, IAttacked, IChracterComponent, IStateEvent
     public StateEvent ReturnStateEvent()
     {
         return stateEvent;
+    }
+    public PlayerSpecialStatList ReturnPlayerSpecialStatList()
+    {
+        return playerSpecialStats;
     }
 }
 

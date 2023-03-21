@@ -1,24 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
+using System;
 
-public class SwordSwingScript : MonoBehaviour
+public interface ISwordComponent
+{
+    public SwordComponent ReturnSwordComponent();
+}
+public class SwordSwingScript : MonoBehaviour, ISwordComponent
 {
     public Animator anime;
     public Collider col;
-    public float swordDmg;
-    public float leftAngle;
-    public float rightAngle;
     public Knight knight;
     public Transform playerTransform;
     public FanShapeColCheck fanShapeColCheck = new FanShapeColCheck();
+    public SwordComponent swordComponent;
 
     public Dictionary<string, float> swordAdditionalDamage = new Dictionary<string, float>();
 
     private void Awake()
     {
         playerTransform = transform.parent;
+        playerTransform.GetComponent<Player>().playerSpecialStats.AddSpecialList("검 공격력", swordComponent.swordDmg);
         knight = transform.parent.GetComponent<Knight>();
         knight.swing.AddListener(Swing);
         knight.swingReset.AddListener(ResetSwing);
@@ -38,5 +41,17 @@ public class SwordSwingScript : MonoBehaviour
         anime.SetBool("IsSwing", false);
         col.enabled = false;
     }
+
+    public SwordComponent ReturnSwordComponent()
+    {
+        return swordComponent;
+    }
 }
 
+[Serializable]
+public class SwordComponent
+{
+    public float swordDmg;
+    public float leftAngle;
+    public float rightAngle;
+}

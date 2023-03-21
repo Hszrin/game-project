@@ -93,7 +93,7 @@ public class CameraManager : MonoBehaviour
         if (zoomIn == false && zoomOut == false && changePos == false && zoomed == true)
         {
             zoomOut = true;
-            statusPanel.SetActive(false);
+            statusPanel.GetComponent<StatusPanel>().DeActivePanel();
         }
     }
 }

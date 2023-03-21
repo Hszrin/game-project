@@ -18,6 +18,7 @@ public abstract class Archer : MonoBehaviour, IMeleeMode
     public Player player;
     public GameObject playerObject { get; protected set; }
     public bool meleeMode;
+    public float arrowDmg;
 
     public void AfterStart()
     {
@@ -30,6 +31,9 @@ public abstract class Archer : MonoBehaviour, IMeleeMode
         arrowPrefab = Resources.Load<GameObject>("Arrow");
         player.stateEvent.onStartAttack.AddListener(ShootModeSelect);
         UI = transform.Find("UI");
+        arrowDmg = ConstInt.basicArrowDamage;
+
+        player.playerSpecialStats.AddSpecialList("화살 공격력", arrowDmg);
     }
     public void ShootModeSelect()
     {

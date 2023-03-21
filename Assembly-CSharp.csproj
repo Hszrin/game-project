@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{DACD1F32-3249-B376-4149-8B34FD8F7AD9}</ProjectGuid>
+    <ProjectGuid>{CA55C3CB-5B2B-F293-C02D-EA6ED62C64AF}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -61,7 +61,7 @@
     <Compile Include="Assets\Script\Chracter\Archer\Arrow\WindArrowCollision.cs" />
     <Compile Include="Assets\Script\Chracter\Enumy\Enumy.cs" />
     <Compile Include="Assets\Script\Wave\WavePanel.cs" />
-    <Compile Include="Assets\Script\Chracter\PlayerSpecialStat.cs" />
+    <Compile Include="Assets\Script\UI\StatusPanel.cs" />
     <Compile Include="Assets\Script\Chracter\FreezeRotation.cs" />
     <Compile Include="Assets\Script\BossScript.cs" />
     <Compile Include="Assets\Script\Chracter\Archer\Arrow\BlastTrigger.cs" />
@@ -109,6 +109,7 @@
     <Compile Include="Assets\Script\Chracter\Knight\TwinSwords.cs" />
     <Compile Include="Assets\Script\Chracter\Rotation.cs" />
     <Compile Include="Assets\Script\Chracter\Archer\Archer.cs" />
+    <Compile Include="Assets\Script\UI\StatusPanelHp.cs" />
     <Compile Include="Assets\Script\Chracter\Knight\KnightSpecialStat.cs" />
     <Compile Include="Assets\Script\BossScripy.cs" />
     <Compile Include="Assets\Script\Chracter\Archer\Arrow\WindBlastTrigger.cs" />
@@ -122,8 +123,7 @@
     <Compile Include="Assets\Script\Chracter\Archer\ArrowAnimScript.cs" />
     <Compile Include="Assets\Script\Chracter\HpPlusNotate.cs" />
     <Compile Include="Assets\Script\Chracter\Archer\Arrow\IceArrowCollision.cs" />
-    <Compile Include="Assets\Script\UI\StatusPanel.cs" />
-    <Compile Include="Assets\Script\UI\StatusPanelHp.cs" />
+    <Compile Include="Assets\Script\Chracter\PlayerSpecialStat.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
