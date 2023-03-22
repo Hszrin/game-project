@@ -30,7 +30,7 @@ public class ChracterSlot : MonoBehaviour, IPointerClickHandler
         profileStatusGroup = uiManager.profileStatusGroup.gameObject;
         clickManager = GameObject.Find("ClickManager").GetComponent<ClickManager>();
     }
-            
+
     public void OnPointerClick(PointerEventData eventData)
     { 
         profileStatusGroup.SetActive(true);

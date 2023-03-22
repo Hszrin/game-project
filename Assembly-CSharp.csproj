@@ -56,6 +56,7 @@
     <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Script\Chracter\PlayerSpecialStat.cs" />
     <Compile Include="Assets\Script\BossSheild.cs" />
     <Compile Include="Assets\Script\Chracter\Knight\NormalSwing.cs" />
     <Compile Include="Assets\Script\Chracter\Archer\Arrow\WindArrowCollision.cs" />
@@ -123,7 +124,7 @@
     <Compile Include="Assets\Script\Chracter\Archer\ArrowAnimScript.cs" />
     <Compile Include="Assets\Script\Chracter\HpPlusNotate.cs" />
     <Compile Include="Assets\Script\Chracter\Archer\Arrow\IceArrowCollision.cs" />
-    <Compile Include="Assets\Script\Chracter\PlayerSpecialStat.cs" />
+    <Compile Include="Assets\Script\UI\StatusPanelText.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

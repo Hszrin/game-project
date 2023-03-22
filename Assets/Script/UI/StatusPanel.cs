@@ -11,8 +11,7 @@ public class StatusPanel : MonoBehaviour
     private Transform statListTransform;
     public ChracterComponent chracterComponent;
     private PlayerSpecialStatList assignedPlayerSpecialStatList;
-    private List<TextMeshProUGUI> statListText = new List<TextMeshProUGUI>();
-    private List<GameObject> statList = new List<GameObject>();
+    private List<StatusPanelText> statListText = new List<StatusPanelText>();
     private List<TextMeshProUGUI> skillList = new List<TextMeshProUGUI>();
     public Image currentSlotImage;
     private void Awake()
@@ -21,8 +20,7 @@ public class StatusPanel : MonoBehaviour
         statListTransform = transform.Find("StatList");
         for (int i = 0; i < 10; i++)
         {
-            statListText.Add(statListTransform.GetChild(i).GetComponent<TextMeshProUGUI>());
-            statList.Add(statListTransform.GetChild(i).gameObject);
+            statListText.Add(statListTransform.GetChild(i).GetComponent<StatusPanelText>());
         }
         for (int i = 0; i < 12; i++)
         {
@@ -36,24 +34,14 @@ public class StatusPanel : MonoBehaviour
         chracterComponent = assignedChracter.GetComponent<IChracterComponent>().ReturnChracterComponent();
         assignedPlayerSpecialStatList = assignedChracter.GetComponent<IPlayerSpecialStatList>().ReturnPlayerSpecialStatList();
         currentSlotImage.sprite = chracterComponent.chraceterImage;
-        statListText[0].text = string.Format("공격력:{0}", chracterComponent.power);
-        statListText[1].text = string.Format("무게:{0}", chracterComponent.weight);
-        statListText[2].text = string.Format("속도:{0}", chracterComponent.speed);
-        statListText[3].text = string.Format("최대체력:{0}", chracterComponent.maxHp);
-        statListText[4].text = string.Format("치명타 확률:{0}", chracterComponent.critChance);
+        statListText[0].AssignComponent("공격력", chracterComponent.power);
+        statListText[1].AssignComponent("무게", chracterComponent.weight);
+        statListText[2].AssignComponent("속도", chracterComponent.speed);
+        statListText[3].AssignComponent("최대체력", chracterComponent.maxHp);
+        statListText[4].AssignComponent("치명타 확률", chracterComponent.critChance);
         for(int i = 0;i < assignedPlayerSpecialStatList.specialStatList.Count; i++)
         {
-            statListText[5 + i].text = string.Format("{0}:{1}", assignedPlayerSpecialStatList.ReturnStatName(i), assignedPlayerSpecialStatList.ReturnAmount(i));
-            statList[5 + i].SetActive(true);
+            statListText[5 + i].AssignComponent(assignedPlayerSpecialStatList.ReturnStatName(i), assignedPlayerSpecialStatList.ReturnAmount(i));
         }
-    }
-    
-    public void DeActivePanel()
-    {
-        for (int i = 5; i < 10; i++)
-        {
-            statList[i].SetActive(false);
-        }
-        gameObject.SetActive(false);
     }
 }
