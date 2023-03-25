@@ -45,6 +45,11 @@ public class Enumy : MonoBehaviour, IAttacked, IChracterComponent, IStateEvent
     }
     public void OnDestroyNotify()
     {
+<<<<<<< Updated upstream
+=======
+        turn.SubMovingCnt();
+        turn.turn--;
+>>>>>>> Stashed changes
         EnumyInfo.Instance.RemoveEnumy(gameObject);
     }
     private void Update()
@@ -128,7 +133,11 @@ public class Enumy : MonoBehaviour, IAttacked, IChracterComponent, IStateEvent
 
         for(int i = 0;i < PlayerInfo.Instance.enabledPlayers.Count;i++)
         {
+<<<<<<< Updated upstream
             playerPoses.Add(PlayerInfo.Instance.enabledPlayers[i].transform.position - transform.position);
+=======
+            if (PlayerInfo.Instance.enabledPlayers[i] != null) playerPoses.Add(PlayerInfo.Instance.enabledPlayers[i].transform.position - transform.position);
+>>>>>>> Stashed changes
         }
         if (playerPoses.Count > 0)
         {
