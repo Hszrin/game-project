@@ -45,7 +45,6 @@ public class Enumy : MonoBehaviour, IAttacked, IChracterComponent, IStateEvent
     }
     public void OnDestroyNotify()
     {
-        turn.SubMovingCnt();
         EnumyInfo.Instance.RemoveEnumy(gameObject);
     }
     private void Update()
@@ -127,9 +126,9 @@ public class Enumy : MonoBehaviour, IAttacked, IChracterComponent, IStateEvent
     {
         List<Vector3> playerPoses = new List<Vector3>();
 
-        for(int i = 0;i < PlayerInfo.Instance.players.Count;i++)
+        for(int i = 0;i < PlayerInfo.Instance.enabledPlayers.Count;i++)
         {
-            if (PlayerInfo.Instance.players[i] != null) playerPoses.Add(PlayerInfo.Instance.players[i].transform.position - transform.position);
+            playerPoses.Add(PlayerInfo.Instance.enabledPlayers[i].transform.position - transform.position);
         }
         if (playerPoses.Count > 0)
         {
@@ -139,7 +138,7 @@ public class Enumy : MonoBehaviour, IAttacked, IChracterComponent, IStateEvent
                 if (shortest.magnitude > playerPoses[i].magnitude) shortest = playerPoses[i];
             }
             SetState(new AttackEState());
-            enumyRigid.velocity = shortest.normalized * (chracterComponent.speed + 100)/100*ConstInt.basicDamage;
+            enumyRigid.velocity = shortest.normalized * (chracterComponent.speed + 100)/100*ConstInt.basicShootCoff;
             turn.StartCounting();
         }
     }

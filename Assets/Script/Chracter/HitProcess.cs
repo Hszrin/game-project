@@ -22,7 +22,6 @@ public class HitProcess : MonoBehaviour
     }
     public void CollisionProcess(Collision collision, CollisionComponent dmgComponent, Transform specTransform = null)
     {
-        Debug.Log(fanShapeColCheck.HitColCheck(collision.transform, transform, dmgComponent.leftAttackAngle, dmgComponent.rightAttackAngle));
         if (fanShapeColCheck.HitColCheck(collision.transform, transform, dmgComponent.leftAttackAngle, dmgComponent.rightAttackAngle))
         {
             opponentComponent = collision.transform.GetComponent<IChracterComponent>().ReturnChracterComponent();
@@ -55,7 +54,7 @@ public class HitProcess : MonoBehaviour
     }
     private void hpAdjust(float playerVelocity)
     {
-        opponentComponent.HpAdjust(-Mathf.Ceil(myDmgComponent.dmg * playerVelocity / ((myDmgComponent.speed + 100) / 100 * ConstInt.basicDamage)));
+        opponentComponent.HpAdjust(-Mathf.Ceil(myDmgComponent.dmg * playerVelocity / ((myDmgComponent.speed + 100) / 100 * ConstInt.basicShootCoff)));
     }
 }
 public class CollisionComponent

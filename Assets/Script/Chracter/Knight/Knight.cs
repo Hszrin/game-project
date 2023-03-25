@@ -42,7 +42,7 @@ public class Knight : MonoBehaviour
     }
     public void ShootKnight()
     {
-        playerRigid.velocity = -transform.forward * player.gage.value * ConstInt.basicDamage*(100 + chracter.speed)/100;
+        playerRigid.velocity = -transform.forward * player.gage.value * ConstInt.basicShootCoff * (100 + chracter.speed) / 100;
         if (player.gage.value >= 0.8)
         {
             StartCoroutine(SwingDelay());

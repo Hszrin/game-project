@@ -9,6 +9,7 @@ public class CheckOnGround : MonoBehaviour
 
     public GameObject ground;
     BoxCollider groundCol;
+    private TurnManager turn;
     float x;
     float z;
     float xPlus;
@@ -19,6 +20,7 @@ public class CheckOnGround : MonoBehaviour
     private void Start()
     {
         ground = GameObject.FindGameObjectWithTag("Ground");
+        turn = GameObject.Find("TurnManager").GetComponent<TurnManager>();
         groundCol = ground.GetComponent<BoxCollider>();
         x = -groundCol.bounds.size.x/2 + ground.transform.position.x;
         z = -groundCol.bounds.size.z / 2 + ground.transform.position.z;
@@ -33,6 +35,7 @@ public class CheckOnGround : MonoBehaviour
             {
                 myHp = myIHp.ReturnChracterComponent();
                 myHp.HpAdjust(-999999);
+                turn.SubMovingCnt();
             }
             else
             {

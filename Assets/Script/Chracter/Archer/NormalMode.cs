@@ -11,7 +11,7 @@ public class NormalMode : Archer
     public ArrowComponent arrowComponent;
     public override void ShootArrow(Vector3 arrowDirection, Quaternion transformRotation)
     {
-        playerRigid.velocity = transform.forward * player.gage.value * ConstInt.basicDamage / 2;
+        playerRigid.velocity = transform.forward * player.gage.value * ConstInt.basicShootCoff / 2;
         arrow = Instantiate(arrowPrefab, transform.position, transformRotation);
         arrowComponent = arrow.GetComponent<IArrow>().ReturnArrowComponent();
         arrow.GetComponent<Rigidbody>().velocity = -arrow.transform.forward * player.gage.value * arrowDmg * 2;

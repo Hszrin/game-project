@@ -14,7 +14,7 @@ public class SwordSwingScript : MonoBehaviour, ISwordComponent
     public Knight knight;
     public Transform playerTransform;
     public FanShapeColCheck fanShapeColCheck = new FanShapeColCheck();
-    public SwordComponent swordComponent;
+    public SwordComponent swordComponent = new SwordComponent();
 
     public Dictionary<string, float> swordAdditionalDamage = new Dictionary<string, float>();
 

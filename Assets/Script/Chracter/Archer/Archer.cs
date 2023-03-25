@@ -43,7 +43,7 @@ public abstract class Archer : MonoBehaviour, IMeleeMode
     public abstract void ShootArrow(Vector3 arrowDirection, Quaternion transformRotation);
     public void ShootArcher()
     {
-        playerRigid.velocity = -transform.forward * player.gage.value * ConstInt.basicDamage * (100 + chracter.speed) / 100;
+        playerRigid.velocity = -transform.forward * player.gage.value * ConstInt.basicShootCoff * (100 + chracter.speed) / 100;
     }
 
     public bool CheckMeleeMode()

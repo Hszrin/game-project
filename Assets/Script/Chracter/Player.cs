@@ -86,9 +86,7 @@ public class Player : MonoBehaviour, IAttacked, IChracterComponent, IStateEvent,
 
     public void DestroyMyself()
     {
-        turn.SubMovingCnt();
         gameObject.SetActive(false);
-        PlayerInfo.Instance.RemovePlayer(gameObject);
     }
 
     public void HpPlusTextFloating(float val)
@@ -109,11 +107,13 @@ public class Player : MonoBehaviour, IAttacked, IChracterComponent, IStateEvent,
     {
         resetSkill.Invoke();
         if (gameObject.activeSelf == false)
-        { 
+        {
             gameObject.SetActive(true);
             PlayerInfo.Instance.AddPlayer(gameObject);
         }
         chracterComponent.HpAdjust(20);
+        dragPoint.gameObject.SetActive(true);
+        dragScript.ResetDragPoint();
     }
     private void OnCollisionEnter(Collision collision)
     {
@@ -123,7 +123,7 @@ public class Player : MonoBehaviour, IAttacked, IChracterComponent, IStateEvent,
             {
                 leftAttackAngle = chracterComponent.leftAttackAngle,
                 rightAttackAngle = chracterComponent.rightAttackAngle,
-                dmg = chracterComponent.power = 10,
+                dmg = chracterComponent.power,
                 speed = chracterComponent.speed
             });
             onCollisionEnterEvent.Invoke();
@@ -154,7 +154,6 @@ public class Player : MonoBehaviour, IAttacked, IChracterComponent, IStateEvent,
         {
             currentState.OnExit();
         }
-
         currentState = nextState;
         currentState.OnEnter(this);
     }

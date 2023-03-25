@@ -29,36 +29,40 @@ public class TurnManager : MonoBehaviour
     }
     public void StartCounting()
     {
+        Debug.Log("startCounting");
         cnt = new Counting(this);
     }
     public void ExitCounting()
     {
+        Debug.Log("ExitCounting");
         turn++;
         if (turn >= PlayerInfo.Instance.enabledPlayers.Count && playerTurn)
         {
-            Debug.Log("playerturn End");
+            //Debug.Log("playerturn End");
             playerTurnEnd();
+            PlayerInfo.Instance.UpdatePlayerList();
         }
         if (turn >= EnumyInfo.Instance.currentTurn.maxCount && !playerTurn)
         {
-            Debug.Log("Enumy turn End");
+            //Debug.Log("Enumy turn End");
             enumyTurnEnd();
+            PlayerInfo.Instance.UpdatePlayerList();
         }
         if (playerTurn)
         {
-            Debug.Log("player turn cunduct");
-            playerTurnConduct();
+            //Debug.Log("player turn cunduct");
             cnt = null;
+            playerTurnConduct();
         }
         else
         {
-            Debug.Log("enumy turn cunduct");
+            //Debug.Log("enumy turn cunduct");
             cnt = null;
             enumyTurnConduct();
         }
         exitCounting.Invoke();
     }
-    public void playerTurnConduct()
+    public void playerTurnConduct()//공격 안한 캐릭터들 잠금 해제
     {
         for (int i = 0; i < PlayerInfo.Instance.enabledPlayers.Count; i++)
         {
@@ -105,14 +109,17 @@ public class TurnManager : MonoBehaviour
         if (cnt != null)
         {
             cnt.Update();
+
         }
     }
     public void AddMovingCnt()
     {
+        Debug.Log("add");
         if(cnt != null) cnt.movingObject++;
     }
     public void SubMovingCnt()
     {
+        Debug.Log("sub");
         if (cnt != null) cnt.movingObject--;
     }
     public void CheckPlayerCount()

@@ -26,7 +26,14 @@ public class PlayerInfo : MonoBehaviour
             return instance;
         }
     }
-
+    public void UpdatePlayerList()
+    {
+        enabledPlayers.Clear();
+        for(int i = 0;i < players.Count; i++)
+        {
+            if (players[i].activeSelf) enabledPlayers.Add(players[i]);
+        }
+    }
     public void RemovePlayer(GameObject removePlayer)
     {
         if (enabledPlayers.IndexOf(removePlayer) >= 0) enabledPlayers.Remove(removePlayer);
