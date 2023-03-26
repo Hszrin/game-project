@@ -78,7 +78,7 @@
     <Compile Include="Assets\Script\CameraManager.cs" />
     <Compile Include="Assets\Script\Wave\WaveController.cs" />
     <Compile Include="Assets\Script\TurnManager.cs" />
-    <Compile Include="Assets\Script\Chracter\DoubleClick.cs" />
+    <Compile Include="Assets\Script\DoubleClick.cs" />
     <Compile Include="Assets\Script\ConstInt.cs" />
     <Compile Include="Assets\Script\Chracter\Knight\TwoHandedSwordSwing.cs" />
     <Compile Include="Assets\Script\Chracter\Knight\Knight.cs" />
@@ -125,6 +125,7 @@
     <Compile Include="Assets\Script\Chracter\Archer\ArrowAnimScript.cs" />
     <Compile Include="Assets\Script\Chracter\HpPlusNotate.cs" />
     <Compile Include="Assets\Script\Chracter\Archer\Arrow\IceArrowCollision.cs" />
+    <Compile Include="Assets\Script\UI\BackGroundClick.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

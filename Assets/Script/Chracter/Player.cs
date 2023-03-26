@@ -86,11 +86,7 @@ public class Player : MonoBehaviour, IAttacked, IChracterComponent, IStateEvent,
 
     public void DestroyMyself()
     {
-<<<<<<< Updated upstream
-=======
         turn.SubMovingCnt();
-        turn.turn--;
->>>>>>> Stashed changes
         gameObject.SetActive(false);
     }
 

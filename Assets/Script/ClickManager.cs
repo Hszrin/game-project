@@ -9,6 +9,7 @@ public class ClickManager : MonoBehaviour
     public GameObject statusPanel;
     public UnityEvent doubleClickChracterEvent;
     private Transform pos;
+    public bool clickLock = false;
     private void Start()
     {
         cameraManager = GameObject.Find("Main Camera").GetComponent<CameraManager>();
@@ -22,9 +23,12 @@ public class ClickManager : MonoBehaviour
 
     public void DoubleClick(Transform pos)
     {
-        this.pos = pos;
-        statusPanel.SetActive(true);
-        statusPanel.GetComponent<StatusPanel>().AssignChracter(pos);
-        doubleClickChracterEvent.Invoke();
+        if (!clickLock)
+        {
+            this.pos = pos;
+            statusPanel.SetActive(true);
+            statusPanel.GetComponent<StatusPanel>().AssignChracter(pos);
+            doubleClickChracterEvent.Invoke();
+        }
     }
 }

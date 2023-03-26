@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: fa79e18f0b1b0d0428eb00ccca457afb
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Happiness Sans Print
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 239d57ad097d53a46880a906ea955a26, type: 3}
+  - {fileID: 12800000, guid: 54bb5edf9f2a8d149b33997a823d7fad, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -36,7 +36,6 @@ public class TurnManager : MonoBehaviour
     {
         Debug.Log("ExitCounting");
         turn++;
-        Debug.Log(turn);
         if (turn >= PlayerInfo.Instance.enabledPlayers.Count && playerTurn)
         {
             //Debug.Log("playerturn End");
@@ -110,7 +109,6 @@ public class TurnManager : MonoBehaviour
         if (cnt != null)
         {
             cnt.Update();
-
         }
     }
     public void AddMovingCnt()

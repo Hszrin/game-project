@@ -18,7 +18,7 @@ public class StatusPanel : MonoBehaviour
     {
         skillListTransform = transform.Find("SkillList");
         statListTransform = transform.Find("StatList");
-        for (int i = 0; i < 10; i++)
+        for (int i = 0; i < 8; i++)
         {
             statListText.Add(statListTransform.GetChild(i).GetComponent<StatusPanelText>());
         }

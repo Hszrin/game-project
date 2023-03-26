@@ -3,7 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class Knight : MonoBehaviour
+public interface ISwordComponent
+{
+    public SwordComponent ReturnSwordComponent();
+}
+public class Knight : MonoBehaviour, ISwordComponent
 {
     public GameObject rightSword;
     public GameObject leftSword;
@@ -18,9 +22,11 @@ public class Knight : MonoBehaviour
     public UnityEvent onActivateLeftSword;
     public UnityEvent onDeActivateRightSword;
     public UnityEvent onDeActivateLeftSword;
+    public SwordComponent swordComponent = new SwordComponent();
     private void Start()
     {
         playerRigid = transform.GetComponent<Rigidbody>();
+        transform.GetComponent<Player>().playerSpecialStats.AddSpecialList("검 공격력", swordComponent.swordDmg);
         player = transform.GetComponent<Player>();
         chracter = transform.GetComponent<IChracterComponent>().ReturnChracterComponent();
         player.stateEvent.onStartAttack.AddListener(ShootKnight);
@@ -72,5 +78,9 @@ public class Knight : MonoBehaviour
     public void DeActiveLeftSword()
     {
         leftSword.SetActive(false);
+    }
+    public SwordComponent ReturnSwordComponent()
+    {
+        return swordComponent;
     }
 }

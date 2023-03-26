@@ -8,15 +8,18 @@ public class CameraManager : MonoBehaviour
     private float z = 0;
     private float x = 0;
     private float valx = 0;
-    public bool zoomed = false;
-    public bool zoomIn = false;
-    public bool zoomOut = false;
-    public bool changePos = false;
-    public bool coroutine = false;
+    private bool zoomed = false;
+    private bool zoomIn = false;
+    private bool zoomOut = false;
+    private bool changePos = false;
+    private bool coroutine = false;
+    private ClickManager clickManager;
+    private GameObject curDragPoint;
     Vector3 vec = new Vector3(0f, 28f, 0f);
     private void Start()
     {
         cam = transform.GetComponent<Camera>();
+        clickManager = GameObject.Find("ClickManager").GetComponent<ClickManager>();
     }
     private void Update()
     {
@@ -27,7 +30,7 @@ public class CameraManager : MonoBehaviour
             vec.z += Time.deltaTime * (z - vec.z) * 7f;
             transform.position = vec;
             valx += Time.deltaTime * (1f - valx) * 10f;
-            cam.orthographicSize = 16.55f - 13.55f * Mathf.Pow(valx, 7f);
+            cam.orthographicSize = 16.55f - 11.55f * Mathf.Pow(valx, 7f);
         }
         if (zoomOut == true)
         {
@@ -37,7 +40,7 @@ public class CameraManager : MonoBehaviour
             vec.z -= Time.deltaTime * vec.z * 7f;
             transform.position = vec;
             valx += Time.deltaTime * (1f - valx) * 10f;
-            cam.orthographicSize = 16.55f - 13.55f * (1f - Mathf.Pow(valx, 7f));
+            cam.orthographicSize = 16.55f - 11.55f * (1f - Mathf.Pow(valx, 7f));
         }
         if (changePos == true)
         {
@@ -50,7 +53,9 @@ public class CameraManager : MonoBehaviour
     IEnumerator EndCameraZoom()
     {
         coroutine = true;
+        clickManager.clickLock = true;
         yield return new WaitForSeconds(0.6f);
+        clickManager.clickLock = false;
         coroutine = false;
         zoomIn = false;
         zoomOut = false;
@@ -61,7 +66,9 @@ public class CameraManager : MonoBehaviour
     IEnumerator EndCameraMove()
     {
         coroutine = true;
+        clickManager.clickLock = true;
         yield return new WaitForSeconds(0.7f);
+        clickManager.clickLock = false;
         coroutine = false;
         changePos = false;
         valx = 0f;
@@ -74,8 +81,10 @@ public class CameraManager : MonoBehaviour
     {
         if (zoomIn == false && zoomOut == false && changePos == false && zoomed == false)
         {
+            curDragPoint = pos.Find("DragPoint").gameObject;
+            curDragPoint.SetActive(false);
             zoomIn = true;
-            x = pos.position.x + 2f;
+            x = pos.position.x + 4f;
             z = pos.position.z;
         }
     }
@@ -84,7 +93,10 @@ public class CameraManager : MonoBehaviour
         if (zoomIn == false && zoomOut == false && changePos == false && zoomed == true)
         {
             changePos = true;
-            x = pos.position.x + 2f;
+            curDragPoint.SetActive(true);
+            curDragPoint = pos.Find("DragPoint").gameObject;
+            curDragPoint.SetActive(false);
+            x = pos.position.x + 4f;
             z = pos.position.z;
         }
     }
@@ -93,6 +105,7 @@ public class CameraManager : MonoBehaviour
         if (zoomIn == false && zoomOut == false && changePos == false && zoomed == true)
         {
             zoomOut = true;
+            curDragPoint.SetActive(true);
             statusPanel.SetActive(false);
         }
     }
